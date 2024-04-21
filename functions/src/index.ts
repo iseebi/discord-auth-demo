@@ -8,12 +8,11 @@
  */
 
 import {onRequest} from "firebase-functions/v2/https";
-import * as logger from "firebase-functions/logger";
+// import * as logger from "firebase-functions/logger";
 
-// Start writing functions
-// https://firebase.google.com/docs/functions/typescript
+const region = "asia-northeast1";
 
-// export const helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+// noinspection JSUnusedGlobalSymbols
+export const httpHandler = onRequest({region}, async (request, response) => {
+  response.send({message: "Hello from Firebase!"});
+});
